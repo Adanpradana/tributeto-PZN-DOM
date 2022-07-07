@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form name="comment-form">
+      <label for="comment"> Comment <input type="text" id="comment" name="comment" /> </label>
+      <br />
+      <label for="name"> Name <input type="text" id="name" name="name" /> </label>
+      <br />
+      <br />
+      <input type="submit" value="submit" />
+    </form>
+    <div id="list"></div>
+    <script>
+      const form = document.querySelector("form[name=comment-form]");
+      form.onsubmit = (even) => {
+        event.preventDefault();
+        const comment = document.getElementById("comment");
+        const commentValue = comment.value;
+        const name = document.getElementById("name");
+        const nameValue = name.value;
+        const list = document.getElementById("list");
+        const commentItem = document.createElement("p");
+
+        commentItem.textContent = `${commentValue} - ${nameValue}`;
+        list.appendChild(commentItem);
+
+        document.querySelector("form[name=comment-form").reset();
+      };
+    </script>
+  </body>
+</html>

@@ -12,24 +12,19 @@
     <input type="button" value="blue" id="blue" onclick="button('blue')" />
 
     <div id="container" style="background-color: #eaeaea; width: 500px; height: 500px"></div>
+    <p id="content"></p>
+    <p id="location"></p>
     <script>
       const container = document.getElementById("container");
+      const content = document.getElementById("content");
+      const locationParagraph = document.getElementById("location");
 
-      //button element
-      const red = document.getElementById("red");
-      const green = document.getElementById("green");
-      const blue = document.getElementById("blue");
+      const height = window.screen.height;
+      const widht = window.screen.width;
+      const url = window.location;
 
-      const button = (color) => {
-        if (color === "red") {
-          container.style.backgroundColor = red.value;
-        } else if (color === "green") {
-          container.style.backgroundColor = "green";
-        } else if (color === "blue") {
-          container.style.backgroundColor = "blue";
-          container.innerHTML = " <h2> hello blue </h2>";
-        }
-      };
+      content.textContent = `widht: ${widht} height : ${height}`;
+      locationParagraph.textContent = url;
     </script>
   </body>
 </html>
